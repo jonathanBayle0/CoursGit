@@ -1,3 +1,8 @@
+body {
+    font-family: Open sans, sans-serif;
+    background: linear-gradient(to right, #d9a7c7, #fffcdc); 
+}
+
 .header {
     display: flex;
     flex-direction: column;
@@ -19,4 +24,46 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.input-guess {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.guess-label {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.guess {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+}
+
+.submit-btn {
+    font-size: 18px;
+    min-width: 100px;
+    margin: 0 10px;
+    padding: 10px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #f1f1f1;
+    border: none;
+    background: #af7313;
 }

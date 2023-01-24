@@ -1,6 +1,6 @@
-#Projet Juste Prix
+# Projet Juste Prix
 
-##Développeurs :
+## Développeurs :
  - BAYLE Jonathan
  - LE BUHAN Marie
 

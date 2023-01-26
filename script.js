@@ -1,40 +1,22 @@
-const operande = 12;
-let operande2 = 45;
+const failMessages = ["🥶 Tu gèles 🥶", "😱 Tu refroidis 😱", "😱 Tu chauffes 😱", "🥵 Tu brûles 🥵"]
+const messageZone = document.querySelector(".message")
 
-let result = operande2 + operande ;
-console.log("resultat de " + operande + " + " + operande2 + " = " + result);
+/** 
+ * Affiche un message en fonction de
+ * la difference entre la valeur a trouver
+ * et la valeur choisie
+*/  
+function badGuess(guess) {
+  let difference = Math.abs(nbAleatoire - guess)
 
-let aPerson = { 
-	name: 'Jean',
-	age: 35,
-	gender: 'masculin',
-	interest: ['musique', 'Jeux videos'],
-};
+  let cas = 0
 
-aPerson.sayHello = function() {console.log('Bonjour ! Je suis ' + this.name + '.'); };
+  // Choix du message en fonction de la difference
+  if (difference > 50)  cas = 0
+  else if (difference > 25) cas = 1
+  else if (difference > 10) cas = 2
+  else  cas = 3
 
-aPerson.sayHello();
-let day;
-switch (new Date().getDay()) {
-  case 0:
-    day = "Dimanche";
-    break;
-  case 1:
-    day = "Lundi";
-    break;
-  case 2:
-     day = "Mardi";
-    break;
-  case 3:
-    day = "Mercredi";
-    break;
-  case 4:
-    day = "Jeudi";
-    break;
-  case 5:
-    day = "Vendredi";
-    break;
-  case 6:
-    day = "Samedi";
+  // Mise a jour du message
+  messageZone.textContent = failMessages[cas]
 }
-console.log("Aujourd'hui nous sommes " + day);

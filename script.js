@@ -18,7 +18,6 @@ init();
 btn.addEventListener("click", callback);
 
 function callback() {
-  //console.log("Saisie.Value :" + saisie.value + "NbAleatoire :" + nbAleatoire);
   if (saisie.value == nbAleatoire) {
     //victoire
     var messageReussite = "🎉🎉🎉 Bravo tu as trouvé le juste prix! 🎉🎉🎉";

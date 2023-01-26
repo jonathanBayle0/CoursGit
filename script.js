@@ -11,19 +11,19 @@ var nbAleatoire;
 
 function init() {
   nbAleatoire = generateur();
-  console.log("NbAleatoire :" + nbAleatoire + "\n");
+  console.log("NbAleatoire :" + nbAleatoire);
 }
 
 init();
-btn.addEventListener("click", callback);
+btn.addEventListener("click", verification);
 
-function callback() {
+function verification() {
   if (saisie.value == nbAleatoire) {
     //victoire
     var messageReussite = "🎉🎉🎉 Bravo tu as trouvé le juste prix! 🎉🎉🎉";
     messageZone.textContent = messageReussite;
   } else {
-    //defaite -> fonction jonathan
+    //defaite
     console.log("Réessaie");
   }
 }

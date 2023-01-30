@@ -3,21 +3,26 @@ function generateur() {
   return nb;
 }
 
-var btn = document.querySelector("button");
-var saisie = document.querySelector("input");
-var messageZone = document.querySelector(".message");
+const form = document.querySelector("form");
+const saisie = document.querySelector("input");
+const messageZone = document.querySelector(".message")
+const reste_btn = document.querySelector(".reset-btn")
 
 var nbAleatoire;
 
 function init() {
+  messageZone.textContent = "Devinez le nombre entre 0 et 100";
   nbAleatoire = generateur();
   console.log("NbAleatoire :" + nbAleatoire);
 }
 
 init();
-btn.addEventListener("click", verification);
 
-function verification() {
+reste_btn.addEventListener("click", init)
+form.addEventListener("submit", verification);
+
+function verification(e) {
+  e.preventDefault()
   if (saisie.value == nbAleatoire) {
     //victoire
     var messageReussite = "🎉🎉🎉 Bravo tu as trouvé le juste prix! 🎉🎉🎉";
@@ -39,13 +44,13 @@ function badGuess(guess) {
   let difference = Math.abs(nbAleatoire - guess)
 
   let cas = 0
-
+  
   // Choix du message en fonction de la difference
   if (difference > 50)  cas = 0
   else if (difference > 25) cas = 1
   else if (difference > 10) cas = 2
   else  cas = 3
-
+  
   // Mise a jour du message
   messageZone.textContent = failMessages[cas]
 }
